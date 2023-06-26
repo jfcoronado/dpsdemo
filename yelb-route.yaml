@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: yelb-ui
+    tier: frontend
+  name: yelb-ui
+spec:
+  host: yelb.apps.panama-lab.nolalab.net
+  port:
+    targetPort: 80
+  to:
+    kind: Service
+    name: yelb-ui
+    weight: 100
+  wildcardPolicy: None
